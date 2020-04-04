@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/es-GT';
+import localeFrExtra from '@angular/common/locales/extra/es-GT';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +13,10 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 import { GaleriaComponent } from './components/home/galeria.component';
 import { FormsModule } from '@angular/forms';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
+
+registerLocaleData(localeFr, 'es-GT', localeFrExtra);
 
 
 @NgModule({
@@ -20,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     BuscarComponent,
     PeliculaImagenPipe,
-    GaleriaComponent
+    GaleriaComponent,
+    PeliculaComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientJsonpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es-GT'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

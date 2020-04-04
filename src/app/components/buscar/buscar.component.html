@@ -23,7 +23,10 @@
           <p class="card-text text-justify">
             {{ pelicula.overview | slice: 0:240 }}...
           </p>
-          <button class="btn btn-outline-primary btn-block">
+          <button
+            class="btn btn-outline-primary btn-block"
+            [routerLink]="['/pelicula', pelicula.id, 'buscar', buscar]"
+          >
             Ver más...
           </button>
         </div>

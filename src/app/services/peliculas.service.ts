@@ -17,7 +17,7 @@ export class PeliculasService {
 
 constructor(private http: HttpClient) {
   this.hasta.setDate(this.hasta.getDate() + 7);
-
+  this.desde.setDate(new Date().getDate() - 45);
 
   if (this.desde.getMonth().toString().length === 1) {
         this.desdeMonth = '0' + (this.desde.getMonth() + 1).toString();
@@ -73,5 +73,10 @@ getEnCines() {
                         return res.results.filter((obj) => obj);
                       })
                       );
+  }
+
+  getPelicula(id: string) {
+    const url = `${this.url}/movie/${id}?api_key=${this.apiKey}&language=es`;
+    return this.http.get( url );
   }
 }
