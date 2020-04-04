@@ -6,3 +6,19 @@
     </p>
   </div>
 </div>
+
+<div class="container">
+  <br />
+  <app-galeria
+    [peliculas]="cartelera | slice: 0:6"
+    titulo="peliculas en cartelera"
+  ></app-galeria>
+  <app-galeria
+    [peliculas]="populares | slice: 0:6"
+    titulo="peliculas populares"
+  ></app-galeria>
+  <app-galeria
+    [peliculas]="popularesNinos | slice: 0:6"
+    titulo="peliculas infantiles"
+  ></app-galeria>
+</div>

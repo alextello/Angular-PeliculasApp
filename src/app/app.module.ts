@@ -7,6 +7,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BuscarComponent } from './components/buscar/buscar.component';
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { GaleriaComponent } from './components/home/galeria.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -14,13 +18,16 @@ import { BuscarComponent } from './components/buscar/buscar.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    BuscarComponent
+    BuscarComponent,
+    PeliculaImagenPipe,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
