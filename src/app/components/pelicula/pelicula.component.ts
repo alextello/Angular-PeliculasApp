@@ -21,12 +21,13 @@ export class PeliculaComponent implements OnInit {
       this.ps.getPelicula(params.id).subscribe(data => {
         this.pelicula =  data;
         this.pagina = params.pag;
+        console.log(this.pelicula, this.pagina);
       });
     });
   }
 
   regresar() {
-    this.router.navigate([this.pagina, this.busqueda]);
+    this.router.navigate([this.pagina, this.busqueda ? this.busqueda : '']);
   }
 
   ngOnInit(): void {
